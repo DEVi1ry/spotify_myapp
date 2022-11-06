@@ -25,7 +25,7 @@ class FirstRoute extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const SecondRoute()),
           );
         },
-      )  //кнопка-заглушка, я пока не знаю, как сделать переход на некст экран через промежуток времени
+      )  //я поменял этот текст
     );
   }
 }
