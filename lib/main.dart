@@ -66,7 +66,8 @@ class SecondRoute extends StatelessWidget {
                     );
                   },
                   child:
-                    Image.asset('assets/images/secondPage/button_text.png')),
+                    Image.asset('assets/images/secondPage/button_text.png')
+                ),
             ),
           ),
           Positioned(top: 30, left: 108, child: Image.asset('assets/images/logo.png'), 
@@ -87,36 +88,101 @@ class ThirdRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Third Route"),
-      ),
-      body: Center(
-          child: Padding(
-        padding: const EdgeInsets.only(left: 80, right: 80),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FirstRoute()),
-                );
-              },
-              child: const Text('First route'),
+      body: Stack(
+        children: <Widget>[
+          Center(child: 
+            Expanded(child: 
+              ConstrainedBox(constraints: 
+                const BoxConstraints.tightFor(width: 1000, height: 1000),
+                child: Image.asset('assets/images/thirdPage/background.png', 
+                  fit: BoxFit.cover,
+                  repeat: ImageRepeat.noRepeat,
+                ),
+              )
+            )
+          ),
+          Positioned(top: 30, left: 108, child: Image.asset('assets/images/logo.png'), 
+          ),
+          Positioned(top: 350, left: 134, child: Image.asset('assets/images/thirdPage/Choose_mode.png'), 
+          ),
+          Positioned(bottom: 20, left: 41, child: 
+            ConstrainedBox(constraints:
+              const BoxConstraints.tightFor(width: 329, height: 81),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 66, 200, 60),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ThirdRoute()),
+                    );
+                  },
+                  child:
+                    Image.asset('assets/images/thirdPage/Continue.png')
+                ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SecondRoute()),
-                );
-              },
-              child: const Text('Second route'),
-            ),
-          ],
-        ),
-      )),
+          ),
+          Positioned(top: 400 , left: 206,child: 
+            SizedBox(width: 500, height: 500, child: 
+              Center( child:
+                Column( crossAxisAlignment: CrossAxisAlignment.stretch, children: <Widget>[
+                  Row( children: [
+                    ConstrainedBox(constraints:
+                      const BoxConstraints.tightFor(width: 80, height: 80),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(30, 255, 255, 255),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const ThirdRoute()),
+                          );
+                        },
+                        child:
+                          Image.asset('assets/images/thirdPage/Moon.png')
+                      ),
+                    ),
+                    ConstrainedBox(constraints:
+                      const BoxConstraints.tightFor(width: 80, height: 80),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(30, 255, 255, 255),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const ThirdRoute()),
+                          );
+                        },
+                        child:
+                          Image.asset('assets/images/thirdPage/Sun.png')
+                      ),
+                    ),
+                  ],
+                  ),
+                  Row( children: [
+                    Image.asset('assets/images/thirdPage/Dark_mode.png'),
+                    Image.asset('assets/images/thirdPage/Light_mode.png'),
+                  ],
+                  ),
+                ],
+                ),
+              ),
+            )
+          )
+        ]
+      )  
     );
   }
 }

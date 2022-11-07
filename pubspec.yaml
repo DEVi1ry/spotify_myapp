@@ -66,6 +66,13 @@ flutter:
     - assets/images/secondPage/background.png
     - assets/images/text_low.png
     - assets/images/text_high.png
+    - assets/images/thirdPage/background.png
+    - assets/images/thirdPage/Continue.png
+    - assets/images/thirdPage/Choose_mode.png
+    - assets/images/thirdPage/Moon.png
+    - assets/images/thirdPage/Sun.png
+    - assets/images/thirdPage/Dark_mode.png
+    - assets/images/thirdPage/Light_mode.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
